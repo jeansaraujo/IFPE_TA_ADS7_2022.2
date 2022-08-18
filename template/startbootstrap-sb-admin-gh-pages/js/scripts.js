@@ -1,10 +1,3 @@
-//import './bootstrap';
-// Import our custom CSS
-import '../sass/app.scss'
-// Import all of Bootstrap's JS
-import * as bootstrap from 'bootstrap'
-
-
 /*!
     * Start Bootstrap - SB Admin v7.0.5 (https://startbootstrap.com/template/sb-admin)
     * Copyright 2013-2022 Start Bootstrap
