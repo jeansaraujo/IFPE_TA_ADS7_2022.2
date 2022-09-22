@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\AdminController::class, 'login']);
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'admin_index'])->name('admin');
 Route::get('/admin/cliente/novo', [App\Http\Controllers\AdminController::class, 'admin_client_new'])->name('client_new');
+Route::get('/admin/clientes', [App\Http\Controllers\AdminController::class, 'admin_client_list'])->name('client_list');
+Route::get('/admin/cliente/pesquisa', [App\Http\Controllers\AdminController::class, 'admin_client_search'])->name('client_search');
 Route::post('/admin/cliente/salvar', [App\Http\Controllers\AdminController::class, 'admin_client_store'])->name('client_store');
 
 Auth::routes();
