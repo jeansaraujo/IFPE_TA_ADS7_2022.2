@@ -50,7 +50,7 @@ class AdminController extends Controller
         $client->email = $request->email;
         $client->site = $request->site;
         $client->nascimento = $request->nascimento;
-        //$client->save();
+        $client->save();
         $sucesso = true;
         return view('admin_cliente_novo')->with(compact("sucesso"));
     }
