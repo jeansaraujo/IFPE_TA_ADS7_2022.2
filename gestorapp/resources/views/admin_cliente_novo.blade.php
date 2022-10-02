@@ -18,31 +18,31 @@
                 <div class="row">
                     <div class="col-6">
                         <label for="" class="label-control">Nome</label>
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" id="nome" class="form-control" name="nome">
                     </div>
                     <div class="col-6">
                         <label for="" class="label-control">Endereço</label>
-                        <input type="text" class="form-control" name="endereco">
+                        <input type="text" id="endereco" class="form-control" name="endereco">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label for="" class="label-control">Número</label>
-                        <input type="text" class="form-control" name="numero">
+                        <input type="text" id="numero" class="form-control" name="numero">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Complemento</label>
-                        <input type="text" class="form-control" name="complemento">
+                        <input type="text" id="complemento" class="form-control" name="complemento">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Bairro</label>
-                        <input type="text" class="form-control" name="bairro">
+                        <input type="text" id="bairro" class="form-control" name="bairro">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label for="" class="label-control">Cidade</label>
-                        <input type="text" class="form-control" name="cidade">
+                        <input type="text" id="cidade" class="form-control" name="cidade">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Estado</label>
@@ -55,39 +55,39 @@
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">CEP</label>
-                        <input type="text" class="form-control" name="cep">
+                        <input type="text" id="cep" class="form-control" name="cep">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3">
                         <label for="" class="label-control">CPF</label>
-                        <input type="text" class="form-control" name="cpf">
+                        <input type="text" id="cpf" class="form-control" name="cpf">
                     </div>
                     <div class="col-3">
                         <label for="" class="label-control">Identidade</label>
-                        <input type="text" class="form-control" name="identidade">
+                        <input type="text" id="identidade" class="form-control" name="identidade">
                     </div>
                     <div class="col-3">
                         <label for="" class="label-control">Telefones</label>
-                        <input type="text" class="form-control" name="telefone">
+                        <input type="text" id="telefone" class="form-control" name="telefone">
                     </div>
                     <div class="col-3">
                         <label for="" class="label-control">Celular</label>
-                        <input type="text" class="form-control" name="celular">
+                        <input type="text" id="celular" class="form-control" name="celular">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label for="" class="label-control">E-mail</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" id="email" class="form-control" name="email">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Site na Internet</label> 
-                        <input type="text" class="form-control" name="site">    
+                        <input type="text" id="site" class="form-control" name="site">    
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Data de Nascimento</label> 
-                        <input type="date" class="form-control" name="nascimento">
+                        <input type="date" id="nascimento" class="form-control" name="nascimento">
                     </div>
                 </div>
                 <div class="row">
@@ -108,5 +108,7 @@
             </form>     
         </div>
     </div>
+    <script src="{{asset('js/client/ClientController.js')}}" ></script>
+    <script src="{{asset('js/client/client.js')}}"></script>
     
 @endsection
