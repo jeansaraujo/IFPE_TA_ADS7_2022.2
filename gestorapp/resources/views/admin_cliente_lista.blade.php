@@ -31,14 +31,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($clients as $client)
-                        <tr>
-                            <td>{{$client->nome}}</td>
-                            <td>{{$client->email}}</td>
-                            <td>{{$client->telefone}}</td>
-                            <td><a href=""><i class="fa-solid fa-eye"></i></a></td>
-                        </tr>
-                    @endforeach
+                    @if(is_iterable($clients)) 
+                        @foreach($clients as $client)
+                            <tr>
+                                <td>{{$client->nome}}</td>
+                                <td>{{$client->email}}</td>
+                                <td>{{$client->telefone}}</td>
+                                <td><a href="{{url('/admin/cliente/atualizar', $client->id)}}"><i class="fa-solid fa-eye"></i></a></td>
+                                <td><a href="{{url('/admin/client/excluir', $client->id)}}"><i class="fa-solid fa-trash"></i></a></td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
