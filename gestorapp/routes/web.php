@@ -22,7 +22,8 @@ Route::get('/admin/cliente/pesquisa', [App\Http\Controllers\AdminController::cla
 Route::post('/admin/cliente/salvar', [App\Http\Controllers\AdminController::class, 'admin_client_store'])->name('client_store');
 Route::get('/admin/cliente/atualizar/{id}', [App\Http\Controllers\AdminController::class, 'admin_cliente_novo'])->name('client_update');
 Route::post('/admin/client/editar/{id}', [App\Http\Controllers\AdminController::class, 'admin_client_edit'])->name('client_edit');
-
+Route::get('/admin/client/excluir/{id}', [App\Http\Controllers\AdminController::class, 'admin_client_delete'])->name('client_delete');
+Route::post('/admin/client/excluidId/{id}', [App\Http\Controllers\AdminController::class, 'admin_client_softDelete'])->name('client_softDel');
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

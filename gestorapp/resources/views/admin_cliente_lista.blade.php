@@ -38,7 +38,7 @@
                                 <td>{{$client->email}}</td>
                                 <td>{{$client->telefone}}</td>
                                 <td><a href="{{url('/admin/cliente/atualizar', $client->id)}}"><i class="fa-solid fa-eye"></i></a></td>
-                                <td><a href=""><i class="fa-solid fa-trash"></i></a></td>
+                                <td><a href="{{url('/admin/client/excluir', $client->id)}}"><i class="fa-solid fa-trash"></i></a></td>
                             </tr>
                         @endforeach
                     @endif

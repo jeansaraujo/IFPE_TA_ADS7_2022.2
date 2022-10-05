@@ -27,7 +27,9 @@ class AdminController extends Controller {
     }
 
     public function admin_client_list(){
-       $clients = Client::all();   
+        $clients = DB::table('clients')
+                    ->where('deleted', '=', null)
+                    ->get();
         return view('admin_cliente_lista')->with(compact('clients'));        
     }
 
@@ -87,5 +89,24 @@ class AdminController extends Controller {
                         'nascimento' => $request->nascimento,
                     ]);
         return $this->admin_client_list();
+    }
+
+    public function admin_client_delete($id) {
+        $client = Client::findOrFail($id);
+        return view('admin_cliente_delete')->with(compact('client'));
+    }
+
+    public function admin_client_softDelete($id) {
+        $client = DB::table('clients')
+                    ->where('id', $id)
+                    ->update([
+                        'deleted' => $this->format_date(),
+                    ]);
+        return $this->admin_client_list();
+    }
+
+    private function format_date() {
+        $date = date('Y/m/d H:i:s');
+        return $date;
     }
 }
