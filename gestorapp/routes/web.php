@@ -20,6 +20,8 @@ Route::get('/admin/cliente/novo', [App\Http\Controllers\AdminController::class, 
 Route::get('/admin/clientes', [App\Http\Controllers\AdminController::class, 'admin_client_list'])->name('client_list');
 Route::get('/admin/cliente/pesquisa', [App\Http\Controllers\AdminController::class, 'admin_client_search'])->name('client_search');
 Route::post('/admin/cliente/salvar', [App\Http\Controllers\AdminController::class, 'admin_client_store'])->name('client_store');
+Route::get('/admin/cliente/atualizar/{id}', [App\Http\Controllers\AdminController::class, 'admin_cliente_novo'])->name('client_update');
+Route::post('/admin/client/editar/{id}', [App\Http\Controllers\AdminController::class, 'admin_client_edit'])->name('client_edit');
 
 Auth::routes();
 

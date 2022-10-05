@@ -3,50 +3,43 @@
     <div class="row">
         <div class="offset-2 col-8 mt-5">
             <h1 style="text-align:center;">
-                Cadastro de Cliente
+                Edição de cliente
             </h1>
           
-            @if($sucesso==true)
-                <div class="alert alert-success">
-                    <p class="h3">
-                        Cadastro realizado com sucesso
-                    </p>
-                </div>
-            @endif
-            <form action="{{route('client_store')}}" method="POST">
+            <form action="{{route('client_edit', $client->id)}}" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-6">
                         <label for="" class="label-control">Nome</label>
-                        <input type="text" id="nome" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" value="{{ $client->nome }}">
                     </div>
                     <div class="col-6">
                         <label for="" class="label-control">Endereço</label>
-                        <input type="text" id="endereco" class="form-control" name="endereco">
+                        <input type="text" class="form-control" name="endereco" value="{{ $client->endereco }}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label for="" class="label-control">Número</label>
-                        <input type="text" id="numero" class="form-control" name="numero">
+                        <input type="text" class="form-control" name="numero" value="{{ $client->numero }}">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Complemento</label>
-                        <input type="text" id="complemento" class="form-control" name="complemento">
+                        <input type="text" class="form-control" name="complemento" value="{{ $client->complemento }}">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Bairro</label>
-                        <input type="text" id="bairro" class="form-control" name="bairro">
+                        <input type="text" class="form-control" name="bairro" value="{{ $client->bairro }}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label for="" class="label-control">Cidade</label>
-                        <input type="text" id="cidade" class="form-control" name="cidade">
+                        <input type="text" class="form-control" name="cidade" value="{{ $client->cidade }}">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Estado</label>
-                        <select class="form-control" name="estado">
+                        <select class="form-control" name="estado" value="{{ $client->estado }}">
                             <option class="form-control" value="al">Alagoas</option>
                             <option class="form-control" value="pe">Pernambuco</option>
                             <option class="form-control" value="rn">Rio Grande do Norte</option>
@@ -55,44 +48,44 @@
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">CEP</label>
-                        <input type="text" id="cep" class="form-control" name="cep">
+                        <input type="text" class="form-control" name="cep" value="{{ $client->cep }}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3">
                         <label for="" class="label-control">CPF</label>
-                        <input type="text" id="cpf" class="form-control" name="cpf">
+                        <input type="text" class="form-control" name="cpf" value="{{ $client->cpf }}">
                     </div>
                     <div class="col-3">
                         <label for="" class="label-control">Identidade</label>
-                        <input type="text" id="identidade" class="form-control" name="identidade">
+                        <input type="text" class="form-control" name="identidade" value="{{ $client->identidade }}">
                     </div>
                     <div class="col-3">
                         <label for="" class="label-control">Telefones</label>
-                        <input type="text" id="telefone" class="form-control" name="telefone">
+                        <input type="text" class="form-control" name="telefone" value="{{ $client->telefone }}">
                     </div>
                     <div class="col-3">
                         <label for="" class="label-control">Celular</label>
-                        <input type="text" id="celular" class="form-control" name="celular">
+                        <input type="text" class="form-control" name="celular" value="{{ $client->celular }}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4">
                         <label for="" class="label-control">E-mail</label>
-                        <input type="email" id="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="email" value="{{ $client->email }}">
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Site na Internet</label> 
-                        <input type="text" id="site" class="form-control" name="site">    
+                        <input type="text" class="form-control" name="site" value="{{ $client->site }}">    
                     </div>
                     <div class="col-4">
                         <label for="" class="label-control">Data de Nascimento</label> 
-                        <input type="date" id="nascimento" class="form-control" name="nascimento">
+                        <input type="date" class="form-control" name="nascimento" value="{{ $client->nascimento }}">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <label for="" class="label-control">Vendedor</label>
+                        <label for="" class="label-control" value="{{ $client->vendedor }}">Vendedor</label>
                         <select class="form-control" name="estado">
                             <option class="form-control" value="x">x</option>
                             <option class="form-control" value="y">y</option>
@@ -101,7 +94,7 @@
                     </div>
                     <div class="col-6 d-flex justify-content-center align-items-end">
                         <button id="cadastrar" class="btn btn-outline-dark">
-                            Cadastrar
+                            Atualizar
                         </button>
                     </div>
                 </div>

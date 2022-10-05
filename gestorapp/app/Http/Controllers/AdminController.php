@@ -39,7 +39,6 @@ class AdminController extends Controller {
      }
 
     public function admin_client_store(Request $request){
-       // dd($request);
         $client = new Client();
         $client->nome = $request->nome;
         $client->numero = $request->numero;
@@ -59,5 +58,34 @@ class AdminController extends Controller {
         $client->save();
         $sucesso = true;
         return view('admin_cliente_novo')->with(compact("sucesso"));
+    }
+
+    public function admin_cliente_novo($id) {
+        $client = Client::findOrFail($id);
+        return view('admin_cliente_update')->with(compact('client'));
+    }
+
+    public function admin_client_edit(Request $request, $id) {
+
+        $clients = DB::table('clients')
+                    ->where('id', $id)
+                    ->update([
+                        'nome' => $request->nome,
+                        'numero' => $request->numero,
+                        'endereco' => $request->endereco,
+                        'complemento' => $request->complemento,
+                        'bairro' => $request->bairro,
+                        'cidade' => $request->cidade,
+                        'estado' => $request->estado,
+                        'cep' => $request->cep,
+                        'cpf' => $request->cpf,
+                        'identidade' => $request->identidade,
+                        'telefone' => $request->telefone,
+                        'celular' => $request->celular,
+                        'email' => $request->email,
+                        'site' => $request->site,
+                        'nascimento' => $request->nascimento,
+                    ]);
+        return $this->admin_client_list();
     }
 }
