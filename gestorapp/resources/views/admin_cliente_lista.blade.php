@@ -1,7 +1,7 @@
 @extends('layouts/admin')
 @section('conteudo')
     <div class="row">
-        <div class="offset-2 col-8 mt-5">
+        <div class="col-12 mt-5">
             <h1 style="text-align:center;">
                 Listagem de Cliente
             </h1>
@@ -20,7 +20,10 @@
                 </div>                
             </form>     
         </div>
-        <div class="offset-2 col-8">
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
             <table class="table text-center">
                 <thead>
                     <tr>
@@ -43,8 +46,7 @@
                         @endforeach
                     @endif
                 </tbody>
-            </table>
+            </table>        
         </div>
     </div>
-    
 @endsection

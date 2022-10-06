@@ -9,7 +9,7 @@ class ProdutoController extends Controller
 {
     public function product_new(){
         $sucesso = false;       
-        return view('produto_novo')->with(compact('sucesso'));        
+        return view('admin_produto_novo')->with(compact('sucesso'));       
     }
 
     public function product_list(){
