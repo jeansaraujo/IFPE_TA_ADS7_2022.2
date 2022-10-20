@@ -18,28 +18,31 @@ class AdminController extends Controller {
     public function admin_index(){   
         $clients = Client::all(); 
         //dd($clients);   
-        return view('admin_principal')->with(compact('clients')); 
+        return view('admin')->with(compact('clients')); 
     }
 
     public function admin_client_new(){
         $sucesso = false;       
-        return view('admin_cliente_novo')->with(compact('sucesso'));        
+        return view('admin.client.admin_cliente_novo')->with(compact('sucesso'));        
     }
 
     public function admin_client_list(){
         $clients = DB::table('clients')
                     ->where('deleted', '=', null)
                     ->get();
-        return view('admin_cliente_lista')->with(compact('clients'));        
+        return view('admin.client.admin_cliente_lista')->with(compact('clients'));        
     }
 
     public function admin_client_search(Request $request){
+        $busca = "%".$request->nome."%";
         $clients = DB::table('clients')
-                    ->where('nome','=',$request->nome)                    
+                    ->where('nome','like',$busca)  
+                    ->orWhere('email','like',$busca)
+                    ->orWhere('telefone','like',$busca)                 
                     ->get(); 
-        return view('admin_cliente_lista')->with(compact('clients'));        
-     }
-
+        return view('admin.client.admin_cliente_lista')->with(compact('clients'));        
+    }
+    
     public function admin_client_store(Request $request){
         $client = new Client();
         $client->nome = $request->nome;
@@ -59,12 +62,12 @@ class AdminController extends Controller {
         $client->nascimento = $request->nascimento;
         $client->save();
         $sucesso = true;
-        return view('admin_cliente_novo')->with(compact("sucesso"));
+        return view('admin.client.admin_cliente_novo')->with(compact("sucesso"));
     }
 
     public function admin_cliente_novo($id) {
         $client = Client::findOrFail($id);
-        return view('admin_cliente_update')->with(compact('client'));
+        return view('admin.client.admin_cliente_update')->with(compact('client'));
     }
 
     public function admin_client_edit(Request $request, $id) {
@@ -93,7 +96,7 @@ class AdminController extends Controller {
 
     public function admin_client_delete($id) {
         $client = Client::findOrFail($id);
-        return view('admin_cliente_delete')->with(compact('client'));
+        return view('admin.client.admin_cliente_delete')->with(compact('client'));
     }
 
     public function admin_client_softDelete($id) {

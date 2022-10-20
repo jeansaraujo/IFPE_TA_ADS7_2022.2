@@ -1,9 +1,9 @@
-@extends('layouts/admin')
+@extends('/layouts/admin')
 @section('conteudo')
     <div class="row">
         <div class="col-12 mt-3">
             <h1 style="text-align:center;">
-                Cadastro de Cliente
+                Cadastro de Fornecedor
             </h1>
             <hr>          
             @if($sucesso==true)
@@ -19,26 +19,26 @@
         @csrf
         <div class="row">
             <div class="col-6">
-                <label for="" class="label-control">Nome</label>
-                <input type="text" id="nome" class="form-control" name="nome">
+                <label for="" class="label-control">Empresa</label>
+                <input type="text" id="empresa" class="form-control" name="empresa">
             </div>
             <div class="col-6">
-                <label for="" class="label-control">Endereço</label>
-                <input type="text" id="endereco" class="form-control" name="endereco">
+                <label for="" class="label-control">Contato</label>
+                <input type="text" id="contato" class="form-control" name="contato">
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-4">
-                <label for="" class="label-control">Número</label>
-                <input type="text" id="numero" class="form-control" name="numero">
-            </div>
-            <div class="col-12 col-md-4">
-                <label for="" class="label-control">Complemento</label>
-                <input type="text" id="complemento" class="form-control" name="complemento">
+                <label for="" class="label-control">Endereço</label>
+                <input type="text" id="endereco" class="form-control" name="endereco">
             </div>
             <div class="col-12 col-md-4">
                 <label for="" class="label-control">Bairro</label>
                 <input type="text" id="bairro" class="form-control" name="bairro">
+            </div>
+            <div class="col-12 col-md-4">
+                <label for="" class="label-control">Cidade</label>
+                <input type="text" id="cidade" class="form-control" name="cidade">
             </div>
         </div>
         <div class="row">
@@ -62,44 +62,32 @@
         </div>
         <div class="row">
             <div class="col-3">
-                <label for="" class="label-control">CPF</label>
-                <input type="text" id="cpf" class="form-control" name="cpf">
-            </div>
-            <div class="col-3">
-                <label for="" class="label-control">Identidade</label>
-                <input type="text" id="identidade" class="form-control" name="identidade">
-            </div>
-            <div class="col-3">
                 <label for="" class="label-control">Telefones</label>
-                <input type="text" id="telefone" class="form-control" name="telefone">
+                <input type="text" id="telefones" class="form-control" name="cpf">
+            </div>
+            <div class="col-3">
+                <label for="" class="label-control">Email</label>
+                <input type="text" id="email" class="form-control" name="email">
+            </div>
+            <div class="col-3">
+                <label for="" class="label-control">CNPJ</label>
+                <input type="text" id="cnpj" class="form-control" name="cnpj">
             </div>
             <div class="col-3">
                 <label for="" class="label-control">Celular</label>
                 <input type="text" id="celular" class="form-control" name="celular">
             </div>
-        </div>
+        </div>        
         <div class="row">
-            <div class="col-4">
-                <label for="" class="label-control">E-mail</label>
-                <input type="email" id="email" class="form-control" name="email">
-            </div>
-            <div class="col-4">
-                <label for="" class="label-control">Site na Internet</label> 
-                <input type="text" id="site" class="form-control" name="site">    
-            </div>
-            <div class="col-4">
-                <label for="" class="label-control">Data de Nascimento</label> 
-                <input type="date" id="nascimento" class="form-control" name="nascimento">
+            <div class="col-12">
+                <label for="" class="label-control">Observações</label>
+                <input type="text" id="observacao" class="form-control" name="observacao">
             </div>
         </div>
         <div class="row">
             <div class="col-6">
-                <label for="" class="label-control">Vendedor</label>
-                <select class="form-control" name="estado">
-                    <option class="form-control" value="x">x</option>
-                    <option class="form-control" value="y">y</option>
-                    <option class="form-control" value="z">z</option>
-                </select>
+                <label for="" class="label-control">E-mail</label>
+                <input type="email" id="email" class="form-control" name="email">
             </div>
             <div class="col-6 d-flex justify-content-center align-items-end">
                 <button id="cadastrar" class="btn btn-outline-dark">

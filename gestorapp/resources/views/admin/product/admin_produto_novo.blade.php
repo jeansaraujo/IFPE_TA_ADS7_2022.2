@@ -1,4 +1,4 @@
-@extends('layouts/admin')
+@extends('/layouts/admin')
 @section('conteudo')
     <div class="row">
         <div class="col-12 mt-3">

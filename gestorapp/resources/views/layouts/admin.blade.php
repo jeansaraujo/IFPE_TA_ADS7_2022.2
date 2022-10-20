@@ -61,6 +61,17 @@
                                 </div>
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEstoque" aria-expanded="false" aria-controls="collapseLayouts">
                                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                        Fornecedor
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseEstoque" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="{{route('provider_index')}}">Relatorio</a>
+                                        <a class="nav-link" href="{{route('provider_create')}}">Cadastro</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseEstoque" aria-expanded="false" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                         Estoque
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                 </a>
@@ -72,7 +83,7 @@
                                     </nav>
                                 </div>
                             <div class="sb-sidenav-menu-heading">Financeiro</div>    
-                            
+                               
                             <div class="sb-sidenav-menu-heading">Vendedor</div>
 
                             <div class="sb-sidenav-menu-heading">Cliente</div>

@@ -13,6 +13,9 @@ Route::post('/admin/client/editar/{id}', [App\Http\Controllers\AdminController::
 Route::get('/admin/client/excluir/{id}', [App\Http\Controllers\AdminController::class, 'admin_client_delete'])->name('client_delete');
 Route::post('/admin/client/excluidId/{id}', [App\Http\Controllers\AdminController::class, 'admin_client_softDelete'])->name('client_softDel');
 
+Route::get('/admin/fornecedor', [App\Http\Controllers\ProviderController::class, 'index'])->name('provider_index');
+Route::get('/admin/fornecedor/novo', [App\Http\Controllers\ProviderController::class, 'create'])->name('provider_create');
+
 Route::get('/admin/produto/novo', [App\Http\Controllers\ProdutoController::class, 'product_new'])->name('admin_produto_new');
 Route::post('/admin/produto/novo', [App\Http\Controllers\ProdutoController::class, 'product_store'])->name('product_store');
 
